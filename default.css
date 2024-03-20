@@ -18,6 +18,20 @@
 
 }
 
+#more-about-me {
+    display: none;
+}
+
+.shaded-area {
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.1); /* Light shaded background */
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    margin-top: 20px;
+    color: #000;
+    font-weight: bold;
+}
 
 html, body{
 	padding: 0;
