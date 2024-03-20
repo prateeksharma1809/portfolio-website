@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Path Finder in 3D Space</title>
+
+
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1" />
+
+	<link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" href="default.css">
+
+
+	<style type="text/css">
+		.img-container {
+			max-width: 600px;
+		}
+
+		img {
+			width: 100%
+		}
+	</style>
+
+</head>
+
+<body>
+	<div class="nav-wrapper">
+
+		<!-- Link around dots-wrapper added after tutorial video -->
+		<a href="index.html">
+			<div class="dots-wrapper">
+				<div id="dot-1" class="browser-dot"></div>
+				<div id="dot-2" class="browser-dot"></div>
+				<div id="dot-3" class="browser-dot"></div>
+			</div>
+		</a>
+
+		<ul id="navigation">
+			<li><a href="index.html#contact">Contact</a></li>
+
+		</ul>
+	</div>
+
+	<div class="main-container">
+		<br>
+
+		<div class="img-container">
+			<img src="images/image.png">
+		</div>
+
+		<h3>Pathfinder Pro: 3D Terrain Analysis with A*</h3>
+
+		<p>In the engaging and challenging sport of orienteering, participants navigate through diverse terrains to find
+			designated locations, known as controls, using only a map and compass. The essence of the sport lies in its
+			combination of physical endurance and strategic planning, as competitors seek the most efficient routes
+			between control points. This project seeks to translate the physical and cognitive demands of orienteering
+			into a computational challenge, leveraging the A* search algorithm to determine optimal paths through
+			simulated terrains.
+			<br>
+			<br>
+			The Setting<br>
+			Participants are provided with simplified digital inputs mimicking the detailed maps used in traditional
+			orienteering. These include:
+			<br> - A terrain map indicating different types of terrains through color coding.
+			<br> - An elevation file detailing the topography of the area.
+			<br> - A list of control points that must be visited in sequence.
+
+			<br>
+			<br>
+			The core task is to calculate the most efficient route that a virtual orienteer must take to visit all control points in order. Given the vastness of the environment and the varying speeds at which the orienteer can move across different terrains, a direct, linear path is rarely the most time-effective strategy. The project thus revolves around implementing an A* search algorithm to navigate through the digital landscape efficiently.
+			<br>
+			<br>
+			The Challenge
+			<br>
+			Customers had the ability to view all their data with a dynamic search form, trend data, add notes to
+			reports and even map their samples' physical location.
+			<br>
+			<br>
+			Implementing A* Search
+			<br>
+			The A* search algorithm was chosen for its effectiveness in finding the shortest path between points in a weighted graph. This algorithm is particularly well-suited for our purpose, as it combines features of both Dijkstra's algorithm (which guarantees the shortest path) and Greedy Best-First-Search (which prioritizes speed). A* achieves this balance by using a heuristic that estimates the cost to reach the goal from a given node, ensuring that the search is both fast and accurate.
+			<br><br>
+			In this project, the A* algorithm navigates the orienteering course by dynamically assessing the cost of moving through various terrains and incorporating elevation changes to calculate the total time or energy required to travel from one point to another. The heuristic function is carefully designed to be both admissible and monotonic, avoiding suboptimal paths and ensuring the algorithm remains efficient.
+			<br><br>
+			Output and Results
+			<br>
+			The program, aptly named 'lab1', takes four arguments: the terrain image, the elevation file, the path file containing control points, and the filename for the output image. It produces an output image overlaying the optimal path on the terrain map, marked with a distinct color. Additionally, it calculates and displays the total length of the path in meters.
+			<br><br>
+			This project not only showcases the application of A* search in solving real-world navigation problems but also highlights the intersection of computer science with physical sports like orienteering. By abstracting the sport's physical and navigational challenges into a computational model, the project offers insights into how algorithms can be used to simulate and solve complex pathfinding problems in varied and dynamic environments
+
+			<br>For more details check files named lab1 in link: <a href="https://github.com/prateeksharma1809/AI_HW">Github</a>
+		</p>
+
+		<h5>Technologies:</h5>
+		<ul>
+			<li>- Python</li>
+			<li>- A* algorithm</li>
+			<li>- PLI library</li>
+		</ul>
+
+
+		<h5>Straight Line Path</h5>
+		<div class="img-container">
+			<img src="images/distanceCalcXpath-diag.png">
+		</div>
+
+		<h6>Elevation difference</h5>
+			<div class="img-container">
+				<img src="images/elevationpath-diag.png">
+			</div>
+
+			<h5>Normal Map</h5>
+			<div class="img-container">
+				<img src="images/normalbrown-diag.png">
+			</div>
+
+	</div>
+
+</body>
+
+</html>

@@ -307,6 +307,14 @@ h6 { font-size: 16px;}
 	text-align: center;
 }
 
+.social_icon {
+	display: grid;
+	align-content: center;
+	text-align: center;
+	width: 24px;
+	height: 24px;
+  }
+
 #social_img{
 	width: 100%;
 }
