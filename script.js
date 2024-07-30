@@ -11,7 +11,7 @@ if(theme == null){
 let csrfToken = localStorage.getItem('csrfToken');
 
 let themeDots = document.getElementsByClassName('theme-dot')
-fetch('http://ec2-35-173-138-5.compute-1.amazonaws.com/contact/api/csrf/')
+fetch('https://ec2-35-173-138-5.compute-1.amazonaws.com/contact/api/csrf/')
     .then(response => response.json())
     .then(data => {
         console.log('CSRF Token:', data.csrfToken);
@@ -33,7 +33,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const formData = new FormData(form);
 
         // Make the fetch POST request
-        fetch('http://ec2-35-173-138-5.compute-1.amazonaws.com/contact/', {
+        fetch('https://ec2-35-173-138-5.compute-1.amazonaws.com/contact/', {
             method: 'POST',
             headers: {
                 'X-CSRFToken': csrfToken  // Ensure CSRF token is included in the headers
