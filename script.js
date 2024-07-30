@@ -1,23 +1,58 @@
-console.log('Its working')
+// console.log('Its working')
 
-let theme = localStorage.getItem('theme')
+let theme = localStorage.getItem('theme');
 
 if(theme == null){
-	setTheme('light')
+	setTheme('light');
 }else{
-	setTheme(theme)
+	setTheme(theme);
 }
+
+let csrfToken = localStorage.getItem('csrfToken');
 
 let themeDots = document.getElementsByClassName('theme-dot')
+fetch('http://ec2-35-173-138-5.compute-1.amazonaws.com/contact/api/csrf/')
+    .then(response => response.json())
+    .then(data => {
+        console.log('CSRF Token:', data.csrfToken);
+        localStorage.setItem('csrfToken', data.csrfToken);
+        csrfToken=data.csrfToken;
+    })
+    .catch(error => console.error('Error fetching CSRF token:', error));
 
+document.addEventListener('DOMContentLoaded', function() {
+    // Attaching the event listener after the DOM content is fully loaded
+    const form = document.getElementById('contact-form');
+    form.addEventListener('submit', function(event) {
+        event.preventDefault();  // Prevent the default form submission
 
-for (var i=0; themeDots.length > i; i++){
-	themeDots[i].addEventListener('click', function(){
-		let mode = this.dataset.mode
-		console.log('Option clicked:', mode)
-		setTheme(mode)
-	})
-}
+        // Get CSRF token from localStorage
+        
+
+        // Prepare FormData object from the form
+        const formData = new FormData(form);
+
+        // Make the fetch POST request
+        fetch('http://ec2-35-173-138-5.compute-1.amazonaws.com/contact/', {
+            method: 'POST',
+            headers: {
+                'X-CSRFToken': csrfToken  // Ensure CSRF token is included in the headers
+                // Note: 'Content-Type' header is not needed when using FormData
+            },
+            body: formData  // Pass form data as the body
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Success:', data);
+            alert('Thank you for your message!'); // Show a success message to the user
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred. Please try again.'); // Show an error message to the user
+        });
+    });
+});
+
 document.addEventListener('DOMContentLoaded', function() {
     var readMoreBtn = document.getElementById('read-more'); // Get the read-more div
     var moreContent = document.getElementById('more-about-me'); // Get the more-about-me div
