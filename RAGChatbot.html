@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AI Chatbot with Role-Based Access Control</title>
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" type="text/css" href="default.css" />
+
+    <style type="text/css">
+      .img-container {
+        max-width: 600px;
+      }
+
+      img {
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nav-wrapper">
+      <!-- Link around dots-wrapper added after tutorial video -->
+      <a href="index.html">
+        <div class="dots-wrapper">
+          <div id="dot-1" class="browser-dot"></div>
+          <div id="dot-2" class="browser-dot"></div>
+          <div id="dot-3" class="browser-dot"></div>
+        </div>
+      </a>
+
+      <ul id="navigation">
+        <li><a href="mailto:prateeksharma1809@gmail.com">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="main-container">
+      <br />
+
+      <div class="img-container">
+        <img src="images/RPC_01_Thumbnail.jpg" />
+      </div>
+
+      <h3>AI-Powered Internal Chatbot with Role-Based Access Control</h3>
+
+    
+
+      <h4>Overview:</h4>
+      <p>
+        Designed for the <b>Codebasics Resume Project Challenge</b>, this project involved building an internal AI chatbot for a fictional FinTech firm, <b>FinSolve Technologies</b>. The goal was to enable secure, <b>role-specific data access</b> using <b>Retrieval-Augmented Generation (RAG)</b> and <b>role-based access control (RBAC)</b>.<br /><br />
+        This chatbot helps eliminate internal communication delays, breaking down data silos across departments like Finance, HR, Marketing, Engineering, and Executive leadership.
+      </p>
+      <hr />
+
+      <h4>Key Features:</h4>
+      <ul>
+        <li><b>Role-Based Access Control (RBAC):</b> Each user can only access data relevant to their role</li>
+        <li><b>RAG Pipeline:</b> Retrieves relevant documents and augments responses with contextual answers</li>
+        <li><b>LLM Integration:</b> Uses GPT-based models to generate natural language responses</li>
+        <li><b>Secure Authentication:</b> Implemented using FastAPI's BasicAuth</li>
+        <li><b>Streamlit UI:</b> Simple, interactive frontend for real-time chat</li>
+        <li><b>Modular Codebase:</b> Clearly separated logic for API, vector search, UI, and access control</li>
+        <li><b>Extensible Design:</b> Easily adaptable to support new roles, datasets, or auth mechanisms</li>
+      </ul>
+      <hr />
+
+      <h4>Tech Stack:</h4>
+      <ul>
+        <li><b>Frontend:</b> React + Typescript</li>
+        <li><b>Backend:</b> Python, FastAPI</li>
+        <li><b>LLM:</b> GPT-4 (or LLaMA-compatible)</li>
+        <li><b>Vector Store:</b> Qdrant</li>
+        <li><b>UI:</b> Streamlit</li>
+        <li><b>Authentication:</b> HTTP Basic Auth with RBAC</li>
+      </ul>
+      <hr />
+
+      <h4>Project Links:</h4>
+      <ul>
+        <li> <b>Demo Video:</b> <a href="https://youtu.be/ziFh0cex_nc" target="_blank">Watch on YouTube</a></li>
+        <li> <b>Backend GitHub Repo:</b> <a href="https://github.com/prateeksharma1809/ds-rpc-01" target="_blank">ds-rpc-01</a></li>
+        <li> <b>Frontend GitHub Repo:</b> <a href="https://github.com/prateeksharma1809/ds-rpc-01-frontend" target="_blank">ds-rpc-01-frontend</a></li>
+      </ul>
+      <hr />
+
+      <h4> Outcome & Impact:</h4>
+      <p>
+        This project demonstrates how LLMs and RAG can be used responsibly within enterprise settings by layering <b>secure access control</b> and <b>role-driven personalization</b>. It's a practical GenAI solution that balances user experience, privacy, and productivity—skills that align closely with modern AI-driven product development.
+      </p>
+
+
+      <h5>Log In Page</h5>
+      <div class="img-container">
+        <img src="images/loginrag.png" />
+      </div>
+
+      <h5>Chatbot Page</h5>
+      <div class="img-container">
+        <img src="images/chatrag.png" />
+      </div>
+      <div class="img-container">
+        <img src="images/populatedchatrag.png" />
+      </div>
+
+      <h5>Admin Page</h5>
+      <div class="img-container">
+        <img src="images/adminrag.png" />
+      </div>
+      <h5>Search user page</h5>
+      <div class="img-container">
+        <img src="images/adminsearch user.png" />
+      </div>
+      <h5>Create user page</h5>
+      <div class="img-container">
+        <img src="images/create user.png" />
+      </div>
+    </div>
+  </body>
+</html>
