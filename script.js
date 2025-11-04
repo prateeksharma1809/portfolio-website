@@ -11,6 +11,15 @@ if(theme == null){
 let csrfToken = localStorage.getItem('csrfToken');
 
 let themeDots = document.getElementsByClassName('theme-dot')
+
+for (var i = 0; themeDots.length > i; i++) {
+	themeDots[i].addEventListener('click', function(){
+		let mode = this.dataset.mode
+		console.log('Option clicked:', mode)
+		setTheme(mode)
+	})
+}
+
 fetch('https://ec2-35-173-138-5.compute-1.amazonaws.com/contact/api/csrf/')
     .then(response => response.json())
     .then(data => {
